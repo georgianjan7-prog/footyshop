@@ -1,0 +1,264 @@
+/* cokoli s [hidden] bude VŽDY schované */
+[hidden] { display: none !important; }
+
+/* ================= HLAVIČKA – logo vlevo, menu+search uprostřed v jedné řadě ================= */
+
+/* lišta */
+.site-header{
+  position: sticky; top: 0; z-index: 100;
+  height: 64px;
+  background: #000;
+  border-bottom: 1px solid #222;
+
+  /* do středu dáme wrapper (nav + search) */
+  display: flex;
+  align-items: center;
+  justify-content: center;     /* střed pro .nav-wrapper */
+  padding: 0 24px;
+  padding-left: 120px;         /* rezervace místa pro logo vlevo */
+}
+
+/* logo vlevo – neovlivňuje centrování */
+.brand{
+  position: absolute;          /* vyjmuté z toku – neruší střed */
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 180%;                /* chceš větší logo – respektuje 64px lištu */
+}
+.brand-logo{
+  max-height: 180%;
+  width: auto;
+  display: block;
+}
+
+/* společný wrapper pro menu + search (drží JEDNU řadu) */
+.nav-wrapper{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: nowrap;           /* nepadá na další řádek */
+  max-width: 100%;
+}
+
+/* horizontální menu */
+.top-nav{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: nowrap;
+}
+
+.nav-link, .nav-btn{
+  color:#ddd;
+  text-decoration:none;
+  font-size:1rem;
+  background:transparent;
+  border:1px solid transparent;
+  padding:8px 10px;
+  border-radius:8px;
+  cursor:pointer;
+}
+.nav-link:hover, .nav-btn:hover{
+  background:#111;
+  border-color:#222;
+  color:#fff;
+}
+
+/* search – hned za „Kontakt“ (je součást .nav-wrapper) */
+.search-box{
+  display: flex;               /* drží input na výšku s nav */
+}
+.search-box input{
+  width: 220px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #111;
+  color: #eee;
+}
+
+/* POZADÍ STRÁNKY */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  /* zeleno-černý přechod */
+  background: linear-gradient(135deg, #0a0a0a, #0f3d0f);
+
+  /* volitelně: šumová textura pro „živost“ */
+  background-image: url("obrazky/noise-texture.png");
+  background-blend-mode: overlay;
+
+  color: #eee; /* světlý text na tmavém podkladu */
+}
+
+/* Panel zůstává stejný – jen pro jistotu */
+.catalog-panel { background:#0a0a0a; border-bottom:1px solid #222; }
+.panel-inner   { max-width:1100px; margin:0 auto; padding:16px 24px; }
+.panel-inner h2{ margin:0 0 12px; font-size:1.1rem; color:#fff; }
+
+/* ===== Tabulka 2 sloupce (Kategorie, Popis) ===== */
+.cat-table{
+  width:100%;
+  border-collapse: collapse;
+  background:#0f0f0f;
+  border:1px solid #222;
+  table-layout: fixed;                 /* aby Popis pěkně zalamoval */
+}
+.cat-table thead th{
+  color:#aaa; font-weight:600;
+  background:#0c0c0c;
+  border-bottom:1px solid #222;
+  padding:10px 12px;
+}
+.cat-table th:first-child   { width: 240px; }  /* širší místo pro „štítek“ */
+.cat-table th:last-child    { width: auto; }
+
+.cat-table tbody td{
+  border-bottom:1px solid #222;
+  padding:10px 12px;
+  vertical-align: middle;
+}
+.cat-table tbody tr:hover{ background:#141414; }
+
+/* Klikací „štítek“ kategorie (odkaz) */
+.cat-name .cat-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border:1px solid #2a2a2a;
+  border-radius:999px;                 /* pilulka */
+  background: linear-gradient(180deg,#0f1a12,#0b0b0b);
+  color:#4ade80;
+  font-weight:800;
+  text-decoration:none;
+  transition: transform .12s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.cat-name .cat-link::after{
+  content:"›";                         /* malá šipka */
+  font-size:1.1em;
+  line-height:1;
+  color:#58f08f;
+}
+.cat-name .cat-link:hover{
+  transform: translateY(-1px);
+  border-color:#3a3a3a;
+  box-shadow:0 6px 16px rgba(0,0,0,.35);
+}
+
+/* Popis doprostřed */
+.cat-desc {
+  color: #ddd;
+  text-align: center;        /* horizontálně na střed */
+  vertical-align: middle;    /* vertikálně na střed */
+  word-break: break-word;
+}
+/* Tlačítko dole v panelu */
+.panel-actions{ display:flex; justify-content:flex-end; padding-top:12px; }
+.btn{
+  display:inline-block; padding:8px 12px; border-radius:8px;
+  background:#1f2937; color:#fff; text-decoration:none; border:1px solid #2a2a2a;
+}
+.btn:hover{ background:#374151; }
+
+
+
+
+/* ====== GRID ROZLOŽENÍ ÚVODNÍ STRÁNKY ====== */
+
+/* 1) ŘADA s 2 velkými bannery vedle sebe */
+.hero-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* dva sloupce */
+  gap: 16px;
+  margin: 20px;
+}
+
+/* 2) ŘADA se 4 malými bannery vedle sebe */
+.promo-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* čtyři stejné sloupce */
+  gap: 16px;
+  margin: 0 20px 24px;
+}
+
+/* ====== VZHLED BANNERŮ (společné) ====== */
+
+.banner {
+  position: relative;       /* aby šly texty a button dovnitř obrázku */
+  overflow: hidden;
+  border-radius: 10px;
+  background: #0a0a0a;      /* fallback pokud se obrázek nenačte */
+  box-shadow: 0 2px 10px rgba(0,0,0,.25);
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;        /* vyplní box bez deformace (ořízne přebytek) */
+  transform: scale(1.002);  /* mikroskopické zvětšení proti vlasům na okrajích */
+}
+
+/* Poměr stran – nic se nebude roztahovat ani mačkat */
+.banner--big   { aspect-ratio: 16/9; }   /* velký banner */
+.banner--small { aspect-ratio: 16/9; }   /* malý banner (klidně necháme stejný poměr) */
+
+/* Jemný hover efekt (volitelné) */
+.banner:hover img { transform: scale(1.04); transition: transform .35s ease; }
+
+/* ====== OVERLAY OBSAH NA OBRÁZKU ====== */
+
+/* horní tlačítko */
+.banner__btn {
+  position: absolute;
+  top: 14px;                /* nahoře u obrázku */
+  left: 14px;
+  padding: 10px 16px;       /* větší než dřív */
+  border: 2px solid #fff;
+  background: rgba(0,0,0,.15); /* lehké stmavení pod tlačítkem */
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: .2px;
+  border-radius: 8px;
+  cursor: pointer;
+  backdrop-filter: blur(2px);
+}
+.banner__btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* velký bílý tučný titulek dole na obrázku */
+.banner__title {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 14px;             /* popisek dole */
+  margin: 0;
+  color: #fff;
+  font-weight: 900;         /* tučné */
+  font-size: 1.6rem;        /* větší text; klidně zvětši */
+  line-height: 1.15;
+  text-shadow: 0 2px 8px rgba(0,0,0,.75);
+}
+
+/* volitelný menší podtitulek */
+.banner__subtitle {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 50px;             /* nad titulkem */
+  margin: 0 0 6px 0;
+  color: #e5e7eb;
+  font-weight: 700;
+  font-size: .95rem;
+  text-shadow: 0 2px 6px rgba(0,0,0,.7);
+}
+
+

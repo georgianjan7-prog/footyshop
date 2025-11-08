@@ -1,0 +1,209 @@
+/* cokoli s [hidden] bude VŽDY schované */
+[hidden] { display: none !important; }
+
+/* ================= HLAVIČKA ================= */
+.site-header{
+  position: sticky; top: 0; z-index: 100;
+  height: 64px;
+  background: #000;
+  border-bottom: 1px solid #222;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 24px; padding-left: 120px;
+}
+
+.brand{
+  position: absolute; left: 24px; top: 50%;
+  transform: translateY(-50%);
+  display: flex; align-items: center;
+  text-decoration: none; height: 180%;
+}
+.brand-logo{ max-height: 180%; width: auto; display: block; }
+
+.nav-wrapper{
+  display: flex; align-items: center; gap: 16px;
+  flex-wrap: nowrap; max-width: 100%;
+}
+.top-nav{ display: flex; align-items: center; gap: 16px; flex-wrap: nowrap; }
+
+.nav-link, .nav-btn{
+  color:#ddd; text-decoration:none; font-size:1rem;
+  background:transparent; border:1px solid transparent;
+  padding:8px 10px; border-radius:8px; cursor:pointer;
+}
+.nav-link:hover, .nav-btn:hover{
+  background:#111; border-color:#222; color:#fff;
+}
+
+.search-box{ display: flex; }
+.search-box input{
+  width: 220px; padding: 8px 12px;
+  border-radius: 8px; border: 1px solid #333;
+  background: #111; color: #eee;
+}
+
+/* ================= POZADÍ ================= */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0a0a0a, #0f3d0f);
+  background-image: url("obrazky/noise-texture.png");
+  background-blend-mode: overlay;
+  color: #eee;
+}
+body.has-modal { overflow: hidden; } /* scroll lock při otevřeném modalu */
+
+/* ================= PANEL KATEGORIÍ ================= */
+.catalog-panel { background:#0a0a0a; border-bottom:1px solid #222; }
+.panel-inner { max-width:1100px; margin:0 auto; padding:16px 24px; }
+.panel-inner h2{ margin:0 0 12px; font-size:1.1rem; color:#fff; }
+
+.cat-table{
+  width:100%; border-collapse: collapse;
+  background:#0f0f0f; border:1px solid #222; table-layout: fixed;
+}
+.cat-table thead th{
+  color:#aaa; font-weight:600; background:#0c0c0c;
+  border-bottom:1px solid #222; padding:10px 12px;
+}
+.cat-table th:first-child { width: 240px; }
+.cat-table tbody td{
+  border-bottom:1px solid #222; padding:10px 12px; vertical-align: middle;
+}
+.cat-table tbody tr:hover{ background:#141414; }
+
+.cat-name .cat-link{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 12px; border:1px solid #2a2a2a; border-radius:999px;
+  background: linear-gradient(180deg,#0f1a12,#0b0b0b);
+  color:#4ade80; font-weight:800; text-decoration:none;
+  transition: transform .12s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.cat-name .cat-link::after{ content:"›"; font-size:1.1em; color:#58f08f; }
+.cat-name .cat-link:hover{
+  transform: translateY(-1px); border-color:#3a3a3a;
+  box-shadow:0 6px 16px rgba(0,0,0,.35);
+}
+.cat-desc { color: #ddd; text-align: center; vertical-align: middle; word-break: break-word; }
+.panel-actions{ display:flex; justify-content:flex-end; padding-top:12px; }
+.btn{
+  display:inline-block; padding:8px 12px; border-radius:8px;
+  background:#1f2937; color:#fff; text-decoration:none; border:1px solid #2a2a2a;
+}
+.btn:hover{ background:#374151; }
+
+/* ================= FILTRY ================= */
+.filters{
+  position:sticky; top:64px; z-index:5;
+  background:rgba(20,20,20,.92); backdrop-filter: blur(4px);
+  border-bottom:1px solid #2a2a2a; padding:12px 20px;
+}
+.filters h2{ margin:0 0 8px; font-size:1rem; font-weight:800; color:#fff; }
+.f-row{ display:grid; grid-template-columns:repeat(6,minmax(160px,1fr)); gap:12px; align-items:end; }
+.filters label{ display:grid; gap:6px; font-size:.92rem; color:#d1d5db; }
+.filters select, .filters input[type="number"], .filters input[type="search"]{
+  background:#0f1115; color:#e5e7eb; border:1px solid #2a2a2a;
+  border-radius:10px; padding:10px 12px; outline:none;
+}
+.filters select:focus, .filters input:focus{
+  border-color:#4ade80; box-shadow:0 0 0 3px rgba(74,222,128,.2);
+}
+.price-inputs{ display:flex; align-items:center; gap:8px; }
+.btn-reset{
+  padding:10px 14px; border:2px solid #4ade80; background:transparent;
+  color:#4ade80; font-weight:800; border-radius:10px; cursor:pointer;
+}
+.btn-reset:hover{ background:#4ade80; color:#000; }
+.results-info{ margin-top:8px; font-size:.95rem; color:#cbd5e1; }
+.results-info strong{ color:#fff; }
+
+/* ================= GRID PRODUKTŮ ================= */
+.catalog-page{ padding:16px 0 40px; color: #e5e7eb; }
+.grid{
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:16px; padding:16px 20px 0;
+}
+
+.card{
+  background:#0b0c0f; border:1px solid #1f2937; border-radius:14px;
+  overflow:hidden; display:flex; flex-direction:column;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px rgba(0,0,0,.5);
+  border-color:#2a3648;
+}
+.card img{ width:100%; aspect-ratio:4/3; object-fit:cover; display:block; border-bottom:1px solid #1f2937; }
+.card h3{ margin:12px 12px 6px; font-size:1.05rem; color:#fff; font-weight:800; }
+.card .price{ margin:0 12px 12px; color:#4ade80; font-weight:900; }
+.btn-cart{
+  margin:0 12px 14px; padding:10px 12px; border-radius:10px;
+  border:2px solid #4ade80; background:transparent; color:#4ade80; font-weight:800;
+  cursor:pointer; transition:background .2s, color .2s, transform .05s;
+}
+.btn-cart:hover{ background:#4ade80; color:#000; }
+.btn-cart:active{ transform:scale(.98); }
+
+/* ================= MODAL ================= */
+.modal{ position:fixed; inset:0; display:none; z-index:200; }
+.modal.is-open{ display:block; }
+.modal__overlay{
+  position:absolute; inset:0; background:rgba(0,0,0,.6);
+  backdrop-filter: blur(2px); cursor: pointer;
+}
+.modal__dialog{
+  position:relative; margin:40px auto; max-width:1000px;
+  width:calc(100% - 32px); background:#0b0c0f; border:1px solid #1f2937;
+  border-radius:14px; color:#eee; box-shadow:0 10px 40px rgba(0,0,0,.5);
+  padding:20px; max-height:calc(100vh - 80px); overflow:auto;
+}
+.modal__close{
+  position:absolute; top:8px; right:10px; width:36px; height:36px;
+  border-radius:8px; border:1px solid #2a2a2a; background:#111; color:#eee; cursor:pointer;
+}
+.modal__close:hover{ background:#181818; }
+
+/* detail layout */
+.md-wrap{ display:grid; grid-template-columns: 1fr 1fr; gap:20px; }
+.md-media{ background:#0e0f12; border:1px solid #1f2937; border-radius:10px; padding:12px; }
+.md-mainimg{ width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:8px; background:#111; display:block; }
+.md-thumbs{ display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; }
+.md-thumbs img{ width:64px; height:64px; object-fit:cover; border-radius:6px; border:2px solid transparent; cursor:pointer; }
+.md-thumbs img:hover, .md-thumbs img.active{ border-color:#4ade80; }
+
+.md-info h1{ margin:0 0 6px; font-size:1.4rem; }
+.md-meta{ color:#a7b3c2; margin-bottom:8px; }
+.md-price{ color:#4ade80; font-weight:900; font-size:1.3rem; margin:10px 0 14px; }
+.md-desc{ color:#d7d7d7; margin:0 0 12px; line-height:1.6; }
+.md-specs{ margin:0 0 14px 18px; color:#cfd7df; }
+.md-specs li{ margin:4px 0; }
+
+.md-actions{ display:flex; gap:10px; align-items:center; }
+.md-qty{ width:72px; padding:8px 10px; border-radius:8px; border:1px solid #333; background:#111; color:#eee; }
+.btn-primary{
+  padding:10px 14px; border-radius:10px; border:2px solid #4ade80;
+  background:#4ade80; color:#061307; font-weight:900; cursor:pointer;
+}
+.btn-ghost{
+  padding:10px 14px; border-radius:10px; border:1px solid #2a2a2a;
+  background:transparent; color:#eee; cursor:pointer;
+}
+
+@media (max-width:1300px){ .grid{ grid-template-columns:repeat(3,1fr);} .f-row{ grid-template-columns:repeat(4,minmax(160px,1fr)); } }
+@media (max-width:980px){ .grid{ grid-template-columns:repeat(2,1fr);} .f-row{ grid-template-columns:repeat(3,minmax(160px,1fr)); } }
+@media (max-width:720px){ .grid{ grid-template-columns:1fr;} .f-row{ grid-template-columns:1fr 1fr; } }
+@media (max-width:520px){ .f-row{ grid-template-columns:1fr; } }
+@media (max-width: 900px){ .md-wrap{ grid-template-columns: 1fr; } }
+
+/* ================= FOCUS STYLY ================= */
+.card:focus-visible,
+.btn-cart:focus-visible,
+.nav-btn:focus-visible,
+.nav-link:focus-visible,
+.modal__close:focus-visible,
+.md-qty:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 2px solid #4ade80;
+  outline-offset: 2px;
+}

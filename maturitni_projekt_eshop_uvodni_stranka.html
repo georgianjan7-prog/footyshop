@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FootyShop</title>
+    <link rel="stylesheet" href="style_maturitni_prace_uvodni_stranka.css">
+    <link rel="icon" href="obrazky/favicon_fs.png" type="image/png">
+    <link rel="icon" href="obrazky/favicon_fs.ico" type="image/x-icon">
+</head>
+<body class="bg-gradient">
+ <script defer src="eshop.js"></script>
+
+<body class="dark">
+ 
+  <header class="site-header">
+  <a href="maturitni_projekt_eshop_uvodni_stranka.html" class="brand" aria-label="Domů">
+    <img src="obrazky/logo_eshop.png" alt="FootyShop logo" class="brand-logo">
+  </a>
+
+  <!-- NOVÉ: společný wrapper, aby nav a search držely vždy vedle sebe -->
+  <div class="nav-wrapper">
+    <nav class="top-nav" aria-label="Hlavní menu">
+      <button id="catalog-toggle" class="nav-btn" type="button"
+        aria-expanded="false" aria-controls="catalog-panel">
+      Katalog ▾
+      </button>
+      <a class="nav-link" href="novinky.html">Novinky</a>
+      <a class="nav-link" href="kontakt.html">Kontakt</a>
+    </nav>
+
+    <div class="search-box">
+      <input type="search" id="search" placeholder="Search" aria-label="Hledat" />
+    </div>
+  </div>
+</header>
+
+
+<section id="catalog-panel" class="catalog-panel" hidden>
+  <div class="panel-inner">
+    <h2>Nabídka kategorií</h2>
+
+    <table class="cat-table" aria-label="Kategorie produktů">
+      <thead>
+        <tr>
+          <th>Kategorie</th>
+          <th>Popis</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+          <td class="cat-name">
+            <a class="cat-link" href="katalog.html?kat=kopacky">Kopačky</a>
+          </td>
+          <td class="cat-desc">Kopačky na různé povrchy (FG, AG, TF).</td>
+        </tr>
+
+        
+          <td class="cat-name">
+            <a class="cat-link" href="katalog.html?kat=chranice">Chrániče</a>
+          </td>
+          <td class="cat-desc">Holení chrániče a příslušenství.</td>
+        </tr>
+
+        
+          <td class="cat-name">
+            <a class="cat-link" href="katalog.html?kat=dresy">Dresy</a>
+          </td>
+          <td class="cat-desc">Zápasové i tréninkové dresy.</td>
+        </tr>
+
+        
+          <td class="cat-name">
+            <a class="cat-link" href="katalog.html?kat=termo">Termo</a>
+          </td>
+          <td class="cat-desc">Termo prádlo do chladu i horka.</td>
+        </tr>
+
+        
+          <td class="cat-name">
+            <a class="cat-link" href="katalog.html?kat=rukavice">Rukavice</a>
+          </td>
+          <td class="cat-desc">Tréninkové a zimní rukavice.</td>
+        </tr>
+
+       
+          <td class="cat-name">
+            <a class="cat-link" href="katalog.html?kat=golman">Gólman</a>
+          </td>
+          <td class="cat-desc">Gólmanské rukavice a výbava.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="panel-actions">
+      <a href="katalog.html" class="btn">Zobrazit celý katalog</a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  <script defer src="uvodni_stranka.js"></script>
+
+
+<main>
+
+  <!-- 2 VELKÉ BANNERY NAHOŘE -->
+  <section class="hero-row">
+
+    <article class="banner banner--big">
+      <img src="obrazky/Fotbalove silenstvi.png" alt="Fotbalové šílenství">
+      <button class="banner__btn" onclick="location.href='katalog.html'">Nakupuj nyní</button>
+      <h2 class="banner__title">FOTBALOVÉ ŠÍLENSTVÍ</h2>
+      <!-- volitelně: <p class="banner__subtitle">Objev více než 6000 stylů</p> -->
+    </article>
+
+    <article class="banner banner--big">
+      <img src="obrazky/Adidas coral blaze pack.jpg" alt="Adidas Coral Blaze Pack">
+      <button class="banner__btn" onclick="location.href='katalog-kopacky.html'">Nakupuj nyní</button>
+      <h2 class="banner__title">ADIDAS CORAL BLAZE PACK</h2>
+    </article>
+
+  </section>
+
+  <!-- 4 MALÉ BANNERY POD TÍM V JEDNÉ ŘADĚ -->
+  <section class="promo-row">
+
+    <article class="banner banner--small">
+      <img src="obrazky/Nike erling haaland force 9.jpeg" alt="Nike Erling Haaland Force 9">
+      <button class="banner__btn" onclick="location.href='katalog-kopacky.html'">Nakupuj nyní</button>
+      <h3 class="banner__title">NIKE ERLING HAALAND FORCE 9</h3>
+    </article>
+
+    <article class="banner banner--small">
+      <img src="obrazky/Adidas lamine yamal.jpeg" alt="Adidas Lamine Yamal Signature">
+      <button class="banner__btn" onclick="location.href='katalog-kopacky.html'">Nakupuj nyní</button>
+      <h3 class="banner__title">ADIDAS LAMINE YAMAL SIGNATURE</h3>
+    </article>
+
+    <article class="banner banner--small">
+      <img src="obrazky/Puma Playmaker pack.jpeg" alt="Puma Playmaker Pack">
+      <button class="banner__btn" onclick="location.href='katalog-kopacky.html'">Nakupuj nyní</button>
+      <h3 class="banner__title">PUMA PLAYMAKER PACK</h3>
+    </article>
+
+    <article class="banner banner--small">
+      <img src="obrazky/Nike scary good pack.jpeg" alt="Nike Scary Good Pack">
+      <button class="banner__btn" onclick="location.href='katalog-kopacky.html'">Nakupuj nyní</button>
+      <h3 class="banner__title">NIKE SCARY GOOD PACK</h3>
+    </article>
+
+  </section>
+
+</main>
+</main>
+</body>
+</html>

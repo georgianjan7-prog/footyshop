@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detail produktu | FootyShop</title>
+  <link rel="stylesheet" href="style_maturitni_prace_uvodni_stranka.css">
+</head>
+<body>
+  <header>
+    <h1>FootyShop</h1>
+  </header>
+
+  <main id="produkt-detail"></main>
+
+  <script src="products.js"></script>
+  <script>
+    // Načtení ID z URL
+    const params = new URLSearchParams(window.location.search);
+    const produktId = params.get('id');
+
+    // Najdeme produkt podle ID
+    const produkt = window.PRODUCTS.find(p => p.id === produktId);
+
+    if (produkt) {
+      document.getElementById('produkt-detail').innerHTML = `
+        <div class="produkt-detail">
+          <img src="${produkt.img}" alt="${produkt.name}">
+          <h2>${produkt.name}</h2>
+          <p><strong>Značka:</strong> ${produkt.brand}</p>
+          <p><strong>Kategorie:</strong> ${produkt.category}</p>
+          <p><strong>Povrch:</strong> ${produkt.surface}</p>
+          <p><strong>Cena:</strong> ${produkt.price} Kč</p>
+          <button>Do košíku</button>
+        </div>
+      `;
+    } else {
+      document.getElementById('produkt-detail').innerHTML = '<p>Produkt nebyl nalezen.</p>';
+    }
+  </script>
+</body>
+</html>
