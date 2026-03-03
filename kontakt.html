@@ -1,105 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FootyShop</title>
-    <link rel="stylesheet" href="kontakt.css">
-    <link rel="icon" href="obrazky/favicon_fs.png" type="image/png">
-    <link rel="icon" href="obrazky/favicon_fs.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt | FootyShop</title>
+  <link rel="stylesheet" href="kontakt.css">
+  <link rel="icon" href="obrazky/favicon_fs.png" type="image/png">
+  <link rel="icon" href="obrazky/favicon_fs.ico" type="image/x-icon">
 </head>
-<body class="bg-gradient">
 
+<body class="bg-gradient dark">
 
-<body class="dark">
- 
   <header class="site-header">
-  <a href="maturitni_projekt_eshop_uvodni_stranka.html" class="brand" aria-label="Domů">
-    <img src="obrazky/logo_eshop.png" alt="FootyShop logo" class="brand-logo">
-  </a>
+    <a href="maturitni_projekt_eshop_uvodni_stranka.html" class="brand" aria-label="Domů">
+      <img src="obrazky/logo_eshop.png" alt="FootyShop logo" class="brand-logo">
+    </a>
 
-  <!-- NOVÉ: společný wrapper, aby nav a search držely vždy vedle sebe -->
-  <div class="nav-wrapper">
-    <nav class="top-nav" aria-label="Hlavní menu">
-      <button id="catalog-toggle" class="nav-btn" type="button"
-        aria-expanded="false" aria-controls="catalog-panel">
-      Katalog ▾
-      </button>
-      <a class="nav-link" href="novinky.html">Novinky</a>
-      <a class="nav-link" href="kontakt.html">Kontakt</a>
-    </nav>
+    <div class="nav-wrapper">
+      <nav class="top-nav" aria-label="Hlavní menu">
+        <button id="catalog-toggle" class="nav-btn" type="button"
+          aria-expanded="false" aria-controls="catalog-panel">
+          Katalog ▾
+        </button>
+        <a class="nav-link" href="novinky.html">Novinky</a>
+        <a class="nav-link" href="kontakt.html">Kontakt</a>
+      </nav>
 
-    <div class="search-box">
-      <input type="search" id="search" placeholder="Search" aria-label="Hledat" />
+      <div class="search-box">
+        <input type="search" id="search" placeholder="Search" aria-label="Hledat" />
+      </div>
     </div>
-  </div>
-</header>
 
+    <a class="cart-icon" id="cartIcon" href="kosik.html" aria-label="Košík">
+      <svg class="cart-svg" xmlns="http://www.w3.org/2000/svg"
+           viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="9" cy="21" r="1"></circle>
+        <circle cx="20" cy="21" r="1"></circle>
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h7.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+      </svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </a>
+  </header>
 
-<section id="catalog-panel" class="catalog-panel" hidden>
-  <div class="panel-inner">
-    <h2>Nabídka kategorií</h2>
+  <section id="catalog-panel" class="catalog-panel" hidden>
+    <div class="panel-inner">
+      <h2>Nabídka kategorií</h2>
 
-    <table class="cat-table" aria-label="Kategorie produktů">
-      <thead>
-        <tr>
-          <th>Kategorie</th>
-          <th>Popis</th>
-        </tr>
-      </thead>
-      <tbody>
-        
-          <td class="cat-name">
-            <a class="cat-link" href="katalog.html?kat=kopacky">Kopačky</a>
-          </td>
-          <td class="cat-desc">Kopačky na různé povrchy (FG, AG, TF).</td>
-        </tr>
+      <table class="cat-table" aria-label="Kategorie produktů">
+        <thead>
+          <tr><th>Kategorie</th><th>Popis</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="cat-name"><a class="cat-link" href="katalog.html?kat=kopacky">Kopačky</a></td><td class="cat-desc">Kopačky na různé povrchy (FG, AG, TF).</td></tr>
+          <tr><td class="cat-name"><a class="cat-link" href="katalog.html?kat=chranice">Chrániče</a></td><td class="cat-desc">Holení chrániče a příslušenství.</td></tr>
+          <tr><td class="cat-name"><a class="cat-link" href="katalog.html?kat=dresy">Dresy</a></td><td class="cat-desc">Zápasové i tréninkové dresy.</td></tr>
+          <tr><td class="cat-name"><a class="cat-link" href="katalog.html?kat=termo">Termo</a></td><td class="cat-desc">Termo prádlo do chladu i horka.</td></tr>
+          <tr><td class="cat-name"><a class="cat-link" href="katalog.html?kat=rukavice">Rukavice</a></td><td class="cat-desc">Tréninkové a zimní rukavice.</td></tr>
+          <tr><td class="cat-name"><a class="cat-link" href="katalog.html?kat=golman">Gólman</a></td><td class="cat-desc">Gólmanské rukavice a výbava.</td></tr>
+        </tbody>
+      </table>
 
-       
-          <td class="cat-name">
-            <a class="cat-link" href="katalog.html?kat=chranice">Chrániče</a>
-          </td>
-          <td class="cat-desc">Holení chrániče a příslušenství.</td>
-        </tr>
-
-        
-          <td class="cat-name">
-            <a class="cat-link" href="katalog.html?kat=dresy">Dresy</a>
-          </td>
-          <td class="cat-desc">Zápasové i tréninkové dresy.</td>
-        </tr>
-
-        
-          <td class="cat-name">
-            <a class="cat-link" href="katalog.html?kat=termo">Termo</a>
-          </td>
-          <td class="cat-desc">Termo prádlo do chladu i horka.</td>
-        </tr>
-
-        
-          <td class="cat-name">
-            <a class="cat-link" href="katalog.html?kat=rukavice">Rukavice</a>
-          </td>
-          <td class="cat-desc">Tréninkové a zimní rukavice.</td>
-        </tr>
-
-        
-          <td class="cat-name">
-            <a class="cat-link" href="katalog.html?kat=golman">Gólman</a>
-          </td>
-          <td class="cat-desc">Gólmanské rukavice a výbava.</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div class="panel-actions">
-      <a href="katalog.html" class="btn">Zobrazit celý katalog</a>
+      <div class="panel-actions">
+        <a href="katalog.html" class="btn">Zobrazit celý katalog</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <main class="contact-page">
+    <header class="page-head">
+      <h1>Kontakt</h1>
+      <p>Napiš nám – odpovíme co nejdřív (školní projekt, demo).</p>
+    </header>
 
-    <script defer src="kontakt.js"></script>
+    <div class="contact-grid">
+      <section class="card">
+        <h2>Kontaktní údaje</h2>
+        <ul class="contact-list">
+          <li><strong>E-mail:</strong> info@footyshop.cz</li>
+          <li><strong>Telefon:</strong> +420 123 456 789</li>
+          <li><strong>Adresa:</strong> Sportovní 12, 100 00 Praha</li>
+          <li><strong>Otevírací doba:</strong> Po–Pá 9:00–17:00</li>
+        </ul>
+        <div class="mini-note">* Údaje jsou ukázkové.</div>
+      </section>
 
+      <section class="card">
+        <h2>Formulář</h2>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Díky! Zpráva byla (demo) odeslána.');">
+          <label>Jméno
+            <input type="text" required placeholder="Tvoje jméno">
+          </label>
+
+          <label>E-mail
+            <input type="email" required placeholder="email@domena.cz">
+          </label>
+
+          <label>Zpráva
+            <textarea rows="5" required placeholder="Napiš nám..."></textarea>
+          </label>
+
+          <button class="btn-primary" type="submit">Odeslat</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <script src="products.js"></script>
+  <script src="cart.js"></script>
+  <script src="kontakt.js" defer></script>
 </body>
 </html>

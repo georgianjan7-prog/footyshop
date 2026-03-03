@@ -27,10 +27,22 @@
       </nav>
 
       <div class="search-box">
-        <!-- SLADĚNO S JS: id="q" -->
         <input type="search" id="q" placeholder="Search" aria-label="Hledat" />
       </div>
     </div>
+
+    <!-- KOŠÍK (jen jednou) -->
+ <a class="cart-icon" id="cartIcon" href="kosik.html" aria-label="Košík">
+  <svg class="cart-svg" xmlns="http://www.w3.org/2000/svg"
+       viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="2"
+       stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <circle cx="9" cy="21" r="1"></circle>
+    <circle cx="20" cy="21" r="1"></circle>
+    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h7.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+  </svg>
+  <span class="cart-count" id="cartCount">0</span>
+</a>
   </header>
 
   <!-- PANEL KATALOGU -->
@@ -47,39 +59,27 @@
         </thead>
         <tbody>
           <tr>
-            <td class="cat-name">
-              <a class="cat-link" href="katalog.html?kat=kopacky">Kopačky</a>
-            </td>
+            <td class="cat-name"><a class="cat-link" href="katalog.html?kat=kopacky">Kopačky</a></td>
             <td class="cat-desc">Kopačky na různé povrchy (FG, AG, TF).</td>
           </tr>
           <tr>
-            <td class="cat-name">
-              <a class="cat-link" href="katalog.html?kat=chranice">Chrániče</a>
-            </td>
+            <td class="cat-name"><a class="cat-link" href="katalog.html?kat=chranice">Chrániče</a></td>
             <td class="cat-desc">Holení chrániče a příslušenství.</td>
           </tr>
           <tr>
-            <td class="cat-name">
-              <a class="cat-link" href="katalog.html?kat=dresy">Dresy</a>
-            </td>
+            <td class="cat-name"><a class="cat-link" href="katalog.html?kat=dresy">Dresy</a></td>
             <td class="cat-desc">Zápasové i tréninkové dresy.</td>
           </tr>
           <tr>
-            <td class="cat-name">
-              <a class="cat-link" href="katalog.html?kat=termo">Termo</a>
-            </td>
+            <td class="cat-name"><a class="cat-link" href="katalog.html?kat=termo">Termo</a></td>
             <td class="cat-desc">Termo prádlo do chladu i horka.</td>
           </tr>
           <tr>
-            <td class="cat-name">
-              <a class="cat-link" href="katalog.html?kat=rukavice">Rukavice</a>
-            </td>
+            <td class="cat-name"><a class="cat-link" href="katalog.html?kat=rukavice">Rukavice</a></td>
             <td class="cat-desc">Tréninkové a zimní rukavice.</td>
           </tr>
           <tr>
-            <td class="cat-name">
-              <a class="cat-link" href="katalog.html?kat=golman">Gólman</a>
-            </td>
+            <td class="cat-name"><a class="cat-link" href="katalog.html?kat=golman">Gólman</a></td>
             <td class="cat-desc">Gólmanské rukavice a výbava.</td>
           </tr>
         </tbody>
@@ -89,7 +89,7 @@
         <a href="katalog.html" class="btn">Zobrazit celý katalog</a>
       </div>
     </div>
-  </section> 
+  </section>
 
   <!-- FILTRY -->
   <section class="filters" aria-label="Filtry">
@@ -151,12 +151,14 @@
     <div class="modal__overlay" data-close></div>
     <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <button class="modal__close" type="button" title="Zavřít" data-close>×</button>
-      <div id="modalContent"><!-- sem se vloží obsah --></div>
+      <div id="modalContent"></div>
     </div>
   </div>
 
-  <!-- Skripty: products MUSÍ být dřív; defer = spustí se až po načtení DOM -->
-  <script src="products.js" defer></script>
+  <!-- Skripty -->
+  <script src="products.js"></script>
+  <script src="cart.js"></script>
   <script src="katalog.js" defer></script>
+
 </body>
 </html>

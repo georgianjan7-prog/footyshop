@@ -262,3 +262,44 @@ body {
 }
 
 
+/* ================= KOŠÍK ================= */
+
+.site-header{
+  position: relative; /* důležité pro absolute */
+}
+
+.cart-icon{
+  position: absolute;
+  right: 15px;                 /* úplně vpravo */
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 1.9rem;           /* větší ikonka */
+  cursor: pointer;
+  padding: 6px 12px;
+  color: #fff;
+  transition: 0.2s ease;
+}
+
+.cart-icon:hover{
+  color: #4ade80;
+}
+
+.cart-count{
+  background: #4ade80;
+  color: #000;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+/* košík jako odkaz nesmí být podtržený */
+.cart-icon { text-decoration: none; }
+
+/* SVG ikonka */
+.cart-svg { width: 26px; height: 26px; }

@@ -1,4 +1,4 @@
-// 1) TVÁ ZÁKLADNÍ DATA (ponecháno) + pár doplnění pro ostatní kategorie
+// 1) ZÁKLADNÍ DATA (ponecháno) pár doplnění pro ostatní kategorie
 const BASE = [
   // ===== KOPAČKY =====
   { id:'nike-phantom-gx2-force9', name:'Nike Phantom GX 2 Force 9', brand:'Nike',   category:'kopacky', surface:'FG', price:5999, img:'obrazky/produkty/nike_phantom_gx2_force9.jpg' },
@@ -111,3 +111,5 @@ function expandProducts(base, extraTotal = 60, minPerCategory = 5) {
 
 // 3) Export – přidáme +60 kusů a hlídáme min. 5 na kategorii
 window.PRODUCTS = expandProducts(BASE, /* extraTotal */ 60, /* minPerCategory */ 5);
+
+
